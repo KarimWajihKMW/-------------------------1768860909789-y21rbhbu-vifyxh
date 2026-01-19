@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكوادرا - ساحة التحدي الرياضي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-gray-800 font-cairo overflow-x-hidden">
+    
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        A
+                    </div>
+                    <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-purple-600">أكوادرا</span>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600 font-semibold transition">الرئيسية</a>
+                    <a href="#challenges" class="text-gray-700 hover:text-indigo-600 font-semibold transition">التحديات الحالية</a>
+                    <a href="#leaderboard" class="text-gray-700 hover:text-indigo-600 font-semibold transition">المتصدرين</a>
+                </div>
+                <button id="uploadBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>شارك مهارتك</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Original Welcome Section (Preserved & Enhanced) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-16">
+            <span class="px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold border border-indigo-100 inline-block mb-4 animate-fade-in-up">
+                ✨ المنصة الأولى للمواهب الرياضية
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight animate-fade-in-up delay-100">
+                أظهر موهبتك، <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-600">تحدى الأفضل</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                حمل فيديوهات لمهاراتك الرياضية، نافس لاعبين آخرين، واجمع تصويت الجمهور لتصبح بطل الساحة.
+            </p>
+            
+            <!-- Existing Card Feature (Preserved) -->
+            <div class="flex justify-center animate-fade-in-up delay-300">
+                <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hover:scale-105 transition-all duration-300 cursor-pointer card group max-w-sm w-full relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-indigo-100 to-transparent rounded-bl-full opacity-50"></div>
+                    <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                         <svg class="w-8 h-8 text-indigo-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-2">ابدأ رحلتك الآن</h2>
+                    <p class="text-gray-500 text-sm">اضغط هنا لمعرفة كيف تبدأ أول تحدي لك وتكسب نقاط الخبرة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Challenges Section -->
+        <div id="challenges" class="mb-20">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                    <i class="fas fa-fire text-orange-500 animate-pulse"></i>
+                    تحديات مشتعلة
+                </h2>
+                <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 transition">عرض الكل ←</a>
+            </div>
+
+            <!-- VS Card Container -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Challenge 1 -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-4 text-white flex justify-between items-center">
+                        <span class="bg-orange-500 px-3 py-1 rounded-full text-xs font-bold">نهائي</span>
+                        <span class="font-bold text-lg">فري ستايل كرة قدم</span>
+                        <span class="text-gray-400 text-sm">ينتهي خلال 2 ساعة</span>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg border-4 border-white rotate-12">
+                                VS
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <!-- Player 1 -->
+                            <div class="text-center w-1/2 pr-4">
+                                <div class="relative inline-block">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Player 1" class="w-20 h-20 rounded-full border-4 border-indigo-100 mb-2 mx-auto object-cover">
+                                    <span class="absolute bottom-0 right-0 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded-full">LVL 12</span>
+                                </div>
+                                <h3 class="font-bold text-lg">أحمد كمال</h3>
+                                <div class="mt-4">
+                                    <button class="vote-btn w-full bg-gray-100 hover:bg-indigo-50 text-gray-700 hover:text-indigo-600 py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group" data-id="p1">
+                                        <i class="far fa-heart group-hover:fas group-hover:text-red-500 transition-colors"></i>
+                                        <span class="vote-count">1,240</span> تصويت
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Player 2 -->
+                            <div class="text-center w-1/2 pl-4">
+                                <div class="relative inline-block">
+                                    <img src="https://i.pravatar.cc/150?img=33" alt="Player 2" class="w-20 h-20 rounded-full border-4 border-pink-100 mb-2 mx-auto object-cover">
+                                    <span class="absolute bottom-0 right-0 bg-pink-600 text-white text-xs px-2 py-0.5 rounded-full">LVL 15</span>
+                                </div>
+                                <h3 class="font-bold text-lg">سارة علي</h3>
+                                <div class="mt-4">
+                                    <button class="vote-btn w-full bg-gray-100 hover:bg-pink-50 text-gray-700 hover:text-pink-600 py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group" data-id="p2">
+                                        <i class="far fa-heart group-hover:fas group-hover:text-red-500 transition-colors"></i>
+                                        <span class="vote-count">1,350</span> تصويت
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="mt-6 flex h-3 rounded-full overflow-hidden bg-gray-200">
+                            <div class="bg-indigo-500 h-full w-[48%] transition-all duration-1000" id="bar-p1"></div>
+                            <div class="bg-pink-500 h-full w-[52%] transition-all duration-1000" id="bar-p2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenge 2 -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="bg-gradient-to-r from-emerald-800 to-teal-900 p-4 text-white flex justify-between items-center">
+                        <span class="bg-emerald-500 px-3 py-1 rounded-full text-xs font-bold">تحدي ودي</span>
+                        <span class="font-bold text-lg">كرة السلة - رميات ثلاثية</span>
+                        <span class="text-gray-400 text-sm">جديد</span>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                            <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg border-4 border-white rotate-12">
+                                VS
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <!-- Player 3 -->
+                            <div class="text-center w-1/2 pr-4">
+                                <div class="relative inline-block">
+                                    <img src="https://i.pravatar.cc/150?img=52" alt="Player 3" class="w-20 h-20 rounded-full border-4 border-emerald-100 mb-2 mx-auto object-cover">
+                                    <span class="absolute bottom-0 right-0 bg-emerald-600 text-white text-xs px-2 py-0.5 rounded-full">LVL 8</span>
+                                </div>
+                                <h3 class="font-bold text-lg">يوسف محمد</h3>
+                                <div class="mt-4">
+                                    <button class="vote-btn w-full bg-gray-100 hover:bg-emerald-50 text-gray-700 hover:text-emerald-600 py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group" data-id="p3">
+                                        <i class="far fa-heart group-hover:fas group-hover:text-red-500 transition-colors"></i>
+                                        <span class="vote-count">420</span> تصويت
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Player 4 -->
+                            <div class="text-center w-1/2 pl-4">
+                                <div class="relative inline-block">
+                                    <img src="https://i.pravatar.cc/150?img=12" alt="Player 4" class="w-20 h-20 rounded-full border-4 border-teal-100 mb-2 mx-auto object-cover">
+                                    <span class="absolute bottom-0 right-0 bg-teal-600 text-white text-xs px-2 py-0.5 rounded-full">LVL 9</span>
+                                </div>
+                                <h3 class="font-bold text-lg">خالد عمر</h3>
+                                <div class="mt-4">
+                                    <button class="vote-btn w-full bg-gray-100 hover:bg-teal-50 text-gray-700 hover:text-teal-600 py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group" data-id="p4">
+                                        <i class="far fa-heart group-hover:fas group-hover:text-red-500 transition-colors"></i>
+                                        <span class="vote-count">380</span> تصويت
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="mt-6 flex h-3 rounded-full overflow-hidden bg-gray-200">
+                            <div class="bg-emerald-500 h-full w-[52%] transition-all duration-1000" id="bar-p3"></div>
+                            <div class="bg-teal-500 h-full w-[48%] transition-all duration-1000" id="bar-p4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill Showcase Grid -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+                <i class="fas fa-play-circle text-purple-600"></i>
+                أحدث المهارات
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6" id="skills-grid">
+                <!-- Skill Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skill" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-3 z-20">
+                            <span class="bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i class="fas fa-video"></i> 0:45
+                            </span>
+                        </div>
+                        <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-indigo-600 z-20 opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">مهارات مراوغة متقدمة</h3>
+                                <span class="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded font-bold">كرة قدم</span>
+                            </div>
+                            <button class="text-gray-400 hover:text-red-500 transition">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?img=60" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-semibold text-gray-700">كابتن ماجد</span>
+                            </div>
+                            <button class="challenge-btn bg-transparent border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-3 py-1 rounded-lg text-sm font-bold transition-all">
+                                تحــدي
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skill" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-3 z-20">
+                            <span class="bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i class="fas fa-video"></i> 1:20
+                            </span>
+                        </div>
+                        <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-indigo-600 z-20 opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">رفع أثقال 120 كجم</h3>
+                                <span class="text-xs text-orange-600 bg-orange-50 px-2 py-0.5 rounded font-bold">كروس فيت</span>
+                            </div>
+                            <button class="text-gray-400 hover:text-red-500 transition">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?img=14" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-semibold text-gray-700">رامي الحديدي</span>
+                            </div>
+                            <button class="challenge-btn bg-transparent border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-3 py-1 rounded-lg text-sm font-bold transition-all">
+                                تحــدي
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Skill" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-3 right-3 z-20">
+                            <span class="bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                                <i class="fas fa-video"></i> 0:30
+                            </span>
+                        </div>
+                        <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-indigo-600 z-20 opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-300 shadow-lg">
+                            <i class="fas fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">حركات باركور</h3>
+                                <span class="text-xs text-teal-600 bg-teal-50 px-2 py-0.5 rounded font-bold">جمباز / باركور</span>
+                            </div>
+                            <button class="text-gray-400 hover:text-red-500 transition">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?img=8" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-semibold text-gray-700">زياد الطائر</span>
+                            </div>
+                            <button class="challenge-btn bg-transparent border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-3 py-1 rounded-lg text-sm font-bold transition-all">
+                                تحــدي
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="mb-4 text-slate-400">مدعوم بواسطة Gemini 3 Pro</p>
+            <div class="flex justify-center space-x-6 space-x-reverse">
+                <a href="#" class="hover:text-indigo-400 transition">حول</a>
+                <a href="#" class="hover:text-indigo-400 transition">الخصوصية</a>
+                <a href="#" class="hover:text-indigo-400 transition">اتصل بنا</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Upload -->
+    <div id="uploadModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-md p-6 transform scale-90 opacity-0 transition-all duration-300" id="modalContent">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">رفع فيديو جديد</h3>
+                <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">عنوان التحدي</label>
+                    <input type="text" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition" placeholder="مثال: أفضل هدف من زاوية صعبة">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">التصنيف</label>
+                    <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                        <option>كرة قدم</option>
+                        <option>كرة سلة</option>
+                        <option>سباحة</option>
+                        <option>ألعاب قوى</option>
+                    </select>
+                </div>
+                <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:bg-gray-50 transition cursor-pointer">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
+                    <p class="text-sm text-gray-500">اسحب الفيديو هنا أو اضغط للاختيار</p>
+                </div>
+                <button type="button" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all">
+                    نشر التحدي
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
